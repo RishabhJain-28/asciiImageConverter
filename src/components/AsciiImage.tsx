@@ -26,17 +26,17 @@ export const AsciiImage: React.FC<AsciiImageProps> = ({}) => {
             p.redraw();
           });
         }
-        if (img) {
-          p.image(img, 0, 0);
-          p.loadPixels();
-          console.log("pixels", p.pixels);
-        }
       };
 
       p.draw = () => {
         p.background(220);
         p.ellipse(50, 50, 80, 80);
         console.log(img);
+        if (img) {
+          p.image(img, 0, 0);
+          p.loadPixels();
+          console.log("pixels", p.pixels);
+        }
       };
     },
     [img]
